@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!-- JavaScript Libraries -->
+    <script th:src="@{/lib/jquery/jquery.min.js}"></script>
+    <script th:src="@{/lib/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+    <script th:src="@{/lib/easing/easing.min.js}"></script>
+    <script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+    <script th:src="@{/lib/counterup/counterup.min.js}"></script>
+    <script th:src="@{/lib/tempusdominus/js/moment.min.js}"></script>
+    <script th:src="@{/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js}"></script>
+
+    <!-- Contact Javascript File -->
+    <script th:src="@{/mail/jqBootstrapValidation.min.js}"></script>
+    <script th:src="@{/mail/contact.js}"></script>
+
+    <!-- Template Javascript -->
+    <script th:src="@{/js/main.js}"></script>
+
+
+
+
+    <meta charset="utf-8">
+    <title>Sentirse Bien</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css}" rel="stylesheet"/>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+<!-- Topbar Start -->
+<div class="container-fluid bg-light d-none d-lg-block">
+    <div class="row py-2 px-lg-5">
+        <div class="col-lg-6 text-left mb-2 mb-lg-0">
+            <div class="d-inline-flex align-items-center">
+                <small><i class="fa fa-phone-alt mr-2"></i>3624-031760</small>
+                <small class="px-3">|</small>
+                <small><i class="fa fa-envelope mr-2"></i>proyectotup98@gmail.com</small>
+            </div>
+        </div>
+        <div class="col-lg-6 text-right">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-primary px-2" href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="text-primary px-2" href="www.x.com/proyectotupspa">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="text-primary px-2" href="">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="text-primary px-2" href="www.instagram.com/proyectotupspa">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="text-primary pl-2" href="">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+<!-- Navbar Start -->
+<div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+        <h1>
+            <img th:src="@{/img/logo%20sentirse%20bien.png}" width="150" height="100" alt="Logo Sentirse Bien">
+        </h1>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+
+                <a th:href="@{/}" class="nav-item nav-link active">Inicio</a>
+                <a th:href="@{/servicios}" class="nav-item nav-link">Servicios</a>
+                <a th:href="@{/empleo}" class="nav-item nav-link">Empleo</a>
+                <a th:href="@{/contacto}" class="nav-item nav-link">Quienes Somos</a>
+                <a th:href="@{/noticias}" class="nav-item nav-link">Noticias </a>
+
+            </div>
+            <a th:if="${remoteUser == null}" th:href="@{/login}" class="btn btn-primary d-none d-lg-block">Acceder</a>
+            <div th:if="${remoteUser != null}">
+                <form action="/logout" method="POST" style="display:inline;">
+                    <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+                    <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
+                </form>
+            </div>
+
+        </div>
+    </nav>
+</div>
+<!-- Navbar End -->
+<p th:text="${remoteUser}">Default Text</p>
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 mb-5 pb-5">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#header-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#header-carousel" data-slide-to="1"></li>
+            <li data-target="#header-carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item position-relative active" style="min-height: 100vh;">
+                <img class="position-absolute w-100 h-100" th:src="@{/img/carousel-1.jpg}" style="object-fit: cover;" alt="Carousel Image 1">
+                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown" style="letter-spacing: 3px;">Spa & Centro de belleza</h6>
+                        <h3 class="display-3 text-capitalize text-white mb-3">Masajes</h3>
+                        <p class="mx-md-5 px-5">Date un respiro, liberá el estrés y renová tu energía con un masaje que tu cuerpo y mente merecen.</p>
+                        <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" th:href="@{/servicios}">Reservar</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Repetir el mismo bloque para cada imagen del carrusel -->
+        </div>
+    </div>
+</div>
+<!-- Carousel End -->
+
+<!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 pb-5 pb-lg-0">
+                <img class="img-fluid w-100" th:src="@{/img/about.jpg}" alt="About Image">
+            </div>
+            <div class="col-lg-6">
+                <h1 class="mb-4">Tu Mejor Spa y Centro de Belleza Facial & Corporal</h1>
+                <p class="pl-4 border-left border-primary">
+                    Buscamos atraer la atención de nuestros clientes a través de experiencias inspiradas en la seducción
+                    de los sentidos. Adaptamos las propuestas con el objetivo de que logre desconectarse
+                    completamente de la rutina y disfrute de un momento de bienestar, en total armonía con la naturaleza.
+                </p>
+                <div class="row pt-3">
+                    <div class="col-6">
+                    </div>
+                    <div class="col-6">
+                        <div class="bg-light text-center p-4">
+                            <h6 class="text-uppercase">Más De</h6>
+                            <h3 class="display-4 text-primary" data-toggle="counter-up">999</h3>
+                            <h6 class="text-uppercase">Clientes Felices</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+<!-- Footer Start -->
+<div class="footer container-fluid position-relative bg-dark py-5" style="margin-top: 90px;">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-lg-6 pr-lg-5 mb-5">
+                <a th:href="@{/}" class="navbar-brand">
+                    <h1 class="mb-3 text-white"><span class="text-primary">Sentirse</span> Bien</h1>
+                </a>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>Resistencia, Chaco, Argentina</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>3624-031760</p>
+                <p><i class="fa fa-envelope mr-2"></i>sentirsebien@administracion.com</p>
+                <div class="d-flex justify-content-start mt-4">
+                    <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-6 pr-lg-5 mb-5">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11202.641763756696!2d-58.97514480289888!3d-27.452293558013807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94450cf0c80be0d3%3A0xc9f9278c74810912!2sUTN%20-%20Facultad%20Regional%20Resistencia!5e0!3m2!1ses-419!2sar!4v1726479245478!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
+
+
+</body>
+
+</html>

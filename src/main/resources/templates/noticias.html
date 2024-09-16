@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <title>SPA Center - Beauty & Spa HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .news-card {
+            transition: transform 0.3s ease;
+        }
+        .news-card:hover {
+            transform: scale(1.05);
+        }
+        .news-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+
+    <!-- Favicon -->
+    <link th:href="@{/img/favicon.ico}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+<!-- Topbar Start -->
+<div class="container-fluid bg-light d-none d-lg-block">
+    <div class="row py-2 px-lg-5">
+        <div class="col-lg-6 text-left mb-2 mb-lg-0">
+            <div class="d-inline-flex align-items-center">
+                <small><i class="fa fa-phone-alt mr-2"></i>3624-031760</small>
+                <small class="px-3">|</small>
+                <small><i class="fa fa-envelope mr-2"></i>sentirsebien@administracion.com</small>
+            </div>
+        </div>
+        <div class="col-lg-6 text-right">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-primary px-2" href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="text-primary px-2" href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="text-primary px-2" href="">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="text-primary px-2" href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="text-primary pl-2" href="">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+
+<!-- Navbar Start -->
+<div class="container-fluid p-0">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
+
+        <h1>
+            <img th:src="@{/img/logo%20sentirse%20bien.png}" width="150" height="100">
+        </h1>
+
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+            <div class="navbar-nav m-auto py-0">
+                <a th:href="@{/}" class="nav-item nav-link active">Inicio</a>
+                <a th:href="@{/servicios}" class="nav-item nav-link">Servicios</a>
+                <a th:href="@{/empleo}" class="nav-item nav-link">Empleo</a>
+                <a th:href="@{/contacto}" class="nav-item nav-link">Quienes Somos</a>
+            </div>
+
+        </div>
+        <a th:href="@{/login}" class="btn btn-primary d-none d-lg-block">Acceder</a>
+    </nav>
+</div>
+<!-- Navbar End -->
+
+
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid bg-jumbotron" style="margin-bottom: 90px;">
+    <div class="container text-center py-5">
+        <h3 class="text-white display-3 mb-4">Noticias</h3>
+
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- News Section Start -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Noticias de Belleza</h2>
+    <div class="row">
+        <!-- News Item 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card news-card">
+                <img th:src="@{/img/noticia1.jpg}" width="350" height="200">
+                <div class="card-body">
+                    <h5 class="card-title">Tendencias en Cuidado de la Piel 2024</h5>
+                    <p class="card-text">Este año, las tendencias en el cuidado de la piel se enfocan en productos naturales y minimalistas. El skincare vegano y libre de químicos está ganando popularidad, mientras que el enfoque en la hidratación y la barrera cutánea sigue siendo una prioridad.</p>
+                </div>
+            </div>
+        </div>
+        <!-- News Item 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card news-card">
+                <img th:src="@{/img/noticia2.jpg}" width="350" height="200">                <div class="card-body">
+                    <h5 class="card-title">Masajes Faciales: La Nueva Sensación</h5>
+                    <p class="card-text">Los masajes faciales están arrasando en los centros de belleza. Además de relajar, estos masajes promueven la circulación sanguínea, mejoran la elasticidad de la piel y ayudan a reducir el estrés, logrando un rostro más luminoso y joven.</p>
+                </div>
+            </div>
+        </div>
+        <!-- News Item 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card news-card">
+                <img th:src="@{/img/noticia3.jpg}" width="350" height="200">                <div class="card-body">
+                    <h5 class="card-title">Los Secretos del Maquillaje Natural</h5>
+                    <p class="card-text">El maquillaje natural es la opción favorita para aquellas que buscan un look fresco y radiante. Usar tonos neutros, bases ligeras y destacar las facciones sin excesos se ha convertido en el estilo más demandado por las celebridades.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- News Item 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card news-card">
+                <img th:src="@{/img/noticia4.jpg}" width="350" height="200">                <div class="card-body">
+                    <h5 class="card-title">Los Mejores Peinados para este Verano</h5>
+                    <p class="card-text">Este verano, los peinados desenfadados y las trenzas vuelven a ser protagonistas. Los recogidos informales y las ondas naturales son perfectos para combatir el calor sin renunciar al estilo.</p>
+                </div>
+            </div>
+        </div>
+        <!-- News Item 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card news-card">
+                <img th:src="@{/img/noticia5.jpg}" width="350" height="200">                <div class="card-body">
+                    <h5 class="card-title">La Revolución de los Aceites Esenciales</h5>
+                    <p class="card-text">Los aceites esenciales han revolucionado el mundo de la belleza y el bienestar. Sus beneficios van desde hidratar la piel hasta mejorar el estado de ánimo, siendo un imprescindible en las rutinas de cuidado personal.</p>
+                </div>
+            </div>
+        </div>
+        <!-- News Item 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="card news-card">
+                <img th:src="@{/img/noticia6.jpg}" width="350" height="200">                <div class="card-body">
+                    <h5 class="card-title">Cómo Mantener el Bronceado Todo el Año</h5>
+                    <p class="card-text">Conseguir un bronceado duradero ya no es imposible. Los autobronceadores y tratamientos naturales son una excelente opción para mantener un tono dorado sin exponerse a los dañinos rayos UV.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- News Section End -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Repeat similar structure for other service categories -->
+
+<!-- Footer Start -->
+<footer class="container-fluid bg-dark text-white mt-5 py-5">
+    <div class="container text-center">
+        <h1><img th:src="@{/img/logo%20sentirse%20bien.png}" width="150" height="100"></h1>
+        <p class="mb-4">Los mejores tratamientos para tu bienestar.</p>
+        <a th:href="@{/contacto}" class="btn btn-primary py-2 px-4">Contactanos</a>
+        <div class="social-icons mt-4">
+            <a class="text-white px-2" href="">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="text-white px-2" href="">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a class="text-white px-2" href="">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a class="text-white px-2" href="">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a class="text-white px-2" href="">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-primary back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.6/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- JavaScript Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/owl.carousel/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.6/js/tempusdominus-bootstrap-4.min.js"></script>
+<script th:src="@{/js/main.js}"></script>
+
+
+
+<!-- Template Javascript -->
+<script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>
